@@ -15,7 +15,7 @@ docker compose up -d --build
 
 ### Laravel環境構築
 ```bash
-docker compose exec app composer install
+docker compose exec app bash -c "cd src && composer install"
 cp src/.env.example src/.env
 ```
 
@@ -56,7 +56,6 @@ STRIPE_SECRET=
 - Docker / Docker Compose
 - MailHog
 - Stripe
-
 
 ## ER図
 
