@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     build: ./docker/php
@@ -7,6 +5,18 @@ services:
     volumes:
       - .:/var/www
     working_dir: /var/www
+    depends_on:
+      - db
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: flea_pma
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8081:80"
     depends_on:
       - db
 
@@ -29,10 +39,15 @@ services:
       MYSQL_USER: flea_user
       MYSQL_PASSWORD: flea_pass
       MYSQL_ROOT_PASSWORD: root
-    ports:
-      - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: flea_mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
 
 volumes:
   db_data:

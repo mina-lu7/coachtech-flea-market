@@ -3,11 +3,10 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use App\Http\Requests\RegisterRequest;
+use Illuminate\Support\Facades\Mail;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -20,24 +19,38 @@ class CreateNewUser implements CreatesNewUsers
      *
      * @throws ValidationException
      */
-    public function create(array $input): User
+    public function create(array $input)
     {
-        Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => [
-                'required',
-                'string',
-                'email',
-                'max:255',
-                Rule::unique(User::class),
-            ],
-            'password' => $this->passwordRules(),
-        ])->validate();
+        $request = new RegisterRequest();
 
-        return User::create([
-            'name' => $input['name'],
-            'email' => $input['email'],
-            'password' => Hash::make($input['password']),
+        $validated = \Illuminate\Support\Facades\Validator::make(
+            $input,
+            $request->rules(),
+            $request->messages(),
+            [
+                'name' => 'お名前',
+                'email' => 'メールアドレス',
+                'password' => 'パスワード',
+            ]
+        )->validate();
+
+        $user = User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => bcrypt($validated['password']),
+            'verification_code' => str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT),
         ]);
+
+        Mail::raw(
+            "認証コードは {$user->verification_code} です。",
+            function ($message) use ($user) {
+                $message->to($user->email)
+                    ->subject('メール認証コード');
+            }
+        );
+
+        session(['verify_email' => $user->email]);
+
+        return $user;
     }
 }

@@ -1,0 +1,1012 @@
+/* 共通設定 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* ヘッダー */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #000;
+    padding: 15px 40px;
+    width: 100%;
+}
+
+.header-logo img {
+    height: 22px;
+    width: auto;
+    display: block;
+}
+
+.header-search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 40px;
+}
+
+.header-search form {
+    width: 100%;
+}
+
+.header-search input {
+    width: 100%;
+    max-width: 500px;
+    padding: 6px 12px;
+    border-radius: 2px;
+    border: none;
+    font-size: 14px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sell-button {
+    background: #fff;
+    color: #000;
+    padding: 5px 18px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.sell-button:hover {
+    opacity: 0.8;
+}
+
+/* タブメニュー */
+.tab-container {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    padding-left: 50px;
+}
+
+.tab-item {
+    margin-right: 40px;
+    padding: 15px 0;
+}
+
+.tab-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+}
+
+.tab-item.active {
+    border-bottom: 3px solid #ff4d4d;
+}
+
+.tab-item.active a {
+    color: #ff4d4d;
+}
+
+/* 商品一覧 */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 0 50px;
+}
+
+.item-link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.item-name {
+    font-size: 14px;
+    margin: 10px 0 0;
+    color: #4b4b4b;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.item-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sold-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 商品詳細 */
+.item-detail-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 5%;
+    gap: 80px;
+}
+
+.item-main {
+    flex: 1;
+    max-width: 600px;
+}
+
+.item-image-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #f0f0f0;
+}
+
+.item-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.item-detail-name {
+    font-size: 32px;
+    margin: 0 0 5px;
+    font-weight: bold;
+}
+
+.item-brand {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.item-price {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.item-price span {
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.item-action {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.action-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+}
+
+.icon-button img {
+    width: 100%;
+    height: auto;
+}
+
+.action-group p {
+    font-size: 14px;
+    margin: 2px 0 0;
+    text-align: center;
+}
+
+.purchase-link {
+    display: block;
+    background: #ff5a5f;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.detail-section {
+    margin-bottom: 40px;
+}
+
+.detail-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.detail-row h3 {
+    font-size: 16px;
+    width: 120px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.category-tag {
+    background: #e0e0e0;
+    padding: 4px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-right: 8px;
+}
+
+/* コメント */
+.comment-section h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.comment-item {
+    margin-bottom: 30px;
+}
+
+.comment-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    background: #e0e0e0;
+    border-radius: 50%;
+}
+
+.user-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.comment-content {
+    background: #f5f5f5;
+    padding: 15px 20px;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.comment-form p {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    height: 180px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    width: 100%;
+    background: #ff5a5f;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 認証ページ */
+.auth-container {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.auth-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.auth-button {
+    width: 100%;
+    background: #ff5a5f;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.auth-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #3490dc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* プロフィール設定 */
+.profile-image-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.profile-image-preview {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-image-label {
+    display: inline-block;
+    padding: 6px 15px;
+    border: 1px solid #ff5a5f;
+    color: #ff5a5f;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.no-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+}
+
+/* 出品ページ */
+.sell-container {
+    max-width: 600px;
+}
+
+.sell-section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 40px 0 10px;
+    color: #333;
+}
+
+.sell-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-bottom: 25px;
+}
+
+.sell-image-upload {
+    width: 100%;
+    min-height: 150px;
+    border: 2px dashed #ccc;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    position: relative;
+    padding: 20px;
+}
+
+.sell-image-preview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sell-image-preview img {
+    max-width: 50%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.sell-image-upload.has-image .sell-image-preview img {
+    margin-bottom: 15px;
+}
+
+.sell-image-label {
+    padding: 6px 15px;
+    border: 1px solid #ff5a5f;
+    color: #ff5a5f;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+.category-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-label span {
+    display: inline-block;
+    padding: 5px 15px;
+    border: 1px solid #ff5a5f;
+    border-radius: 20px;
+    color: #ff5a5f;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.category-label input:checked+span {
+    background-color: #ff5a5f;
+    color: #fff;
+}
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff !important;
+    color: #333 !important;
+    cursor: pointer;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 12px;
+    color: #333;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    resize: none;
+    min-height: 120px;
+}
+
+.price-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.price-unit {
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+}
+
+.price-input-wrapper input {
+    padding-left: 30px !important;
+}
+
+/* マイページ */
+.mypage-profile-section {
+    padding: 60px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-flex {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.profile-image-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 50px;
+    flex-shrink: 0;
+}
+
+.profile-image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #d9d9d9;
+}
+
+.profile-user-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.profile-edit-wrapper {
+    margin-left: auto;
+}
+
+.profile-edit-link {
+    border: 1px solid #ff5a5f;
+    color: #ff5a5f;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* 購入*/
+.purchase-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 60px auto;
+    gap: 70px;
+    padding: 0 50px;
+}
+
+.purchase-main {
+    flex: 2;
+}
+
+.purchase-item-info {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.purchase-item-image {
+    width: 180px;
+    height: 180px;
+    background-color: #d9d9d9;
+}
+
+.purchase-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.purchase-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
+
+.purchase-item-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.purchase-item-price {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.purchase-divider {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 10px 0;
+}
+
+.purchase-block {
+    margin-bottom: 30px;
+}
+
+.purchase-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.purchase-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.address-change-link {
+    color: #3490dc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.address-display {
+    padding-left: 30px;
+    line-height: 2;
+}
+
+.address-display p {
+    margin: 0;
+}
+
+.purchase-block .select-wrapper {
+    width: 300px;
+    margin-left: 30px;
+}
+
+.purchase-block .select-wrapper select {
+    padding: 8px 12px;
+}
+
+.purchase-sidebar {
+    flex: 1;
+    min-width: 380px;
+}
+
+.summary-card {
+    margin-top: 20px;
+}
+
+.summary-content {
+    border: 1px solid #333;
+    margin-bottom: 60px;
+}
+
+.summary-item-box {
+    padding: 30px 40px;
+}
+
+.summary-item-box:first-child {
+    border-bottom: 1px solid #333;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-label {
+    font-size: 14px;
+}
+
+.summary-value {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.purchase-submit-button {
+    width: 100%;
+    background-color: #ff5a5f;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.purchase-submit-button:hover {
+    opacity: 0.9;
+}
+
+/* 配送先変更 */
+.address-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.address-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+
+.address-form {
+    width: 100%;
+}
+
+.address-form .form-group {
+    margin-bottom: 35px;
+}
+
+.address-form .form-label {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.address-form .form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.address-submit-button {
+    width: 100%;
+    background-color: #ff5a5f;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 50px;
+}
+
+.address-submit-button:hover {
+    opacity: 0.9;
+}
+
+/* メール認証 */
+.verify-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.verify-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.verify-status-message {
+    color: #2d572c;
+    background-color: #e6f4ea;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.verify-text {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 60px;
+}
+
+.verify-start-button {
+    display: inline-block;
+    background-color: #d9d9d9;
+    color: #000;
+    padding: 15px 40px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.verify-resend-form {
+    display: block;
+}
+
+.verify-resend-link {
+    background: none;
+    border: none;
+    color: #3490dc;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.verify-resend-link:hover {
+    text-decoration: underline;
+}
+
+/* 認証コード */
+.verify-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.verify-input {
+    width: 200px;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 40px;
+}
+
+.verify-button {
+    display: inline-block;
+    background-color: #ff5a5f;
+    color: #fff;
+    padding: 12px 60px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 850px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .header-search {
+        margin: 0 10px;
+    }
+
+    .header-search input {
+        max-width: 100%;
+        font-size: 12px;
+    }
+
+    .header-nav {
+        gap: 10px;
+    }
+
+    .nav-link,
+    .sell-button {
+        font-size: 12px;
+    }
+
+    .sell-button {
+        padding: 4px 10px;
+    }
+
+    .item-grid {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .item-detail-container,
+    .purchase-container,
+    .profile-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .item-main,
+    .item-info,
+    .purchase-sidebar {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .purchase-sidebar {
+        min-width: auto;
+    }
+
+    .profile-flex {
+        text-align: center;
+        gap: 15px;
+    }
+}
